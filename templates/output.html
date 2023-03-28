@@ -1,0 +1,26 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask</title>
+</head>
+
+<body>
+    <center>
+
+        <form class="grid" action="/index" method="GET">
+            <p>
+                Result
+            </p>
+            {% if output %}
+            <h3> {{output}} </h3>
+            {% endif %}
+            <input type="Submit" class="file_submit" value="Ask Again" />
+
+        </form>
+    </center>
+</body>
+
+</html>

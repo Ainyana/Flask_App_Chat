@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask</title>
+</head>
+
+<body>
+    <center>
+
+        <form class="grid" action="/record" method="POST">
+            <center>
+                {% if name %}
+                <h3>Hello {{name}} how are you?</h3>
+                {% endif %}
+            </center>
+
+            <p>
+                Hello, Click on the button to start recording.
+            </p>
+            <label for="Name">Enter your name : </label>
+            <input type="text" name="name" id="name">
+            <br/>
+            <p> After clicking on the button , you can start speaking for 10 seconds. It will record your voice</p>
+            <input type="Submit" class="file_submit" value="Start Recording" />
+
+
+        </form>
+    </center>
+</body>
+
+</html>
