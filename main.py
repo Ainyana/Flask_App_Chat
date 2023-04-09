@@ -38,8 +38,6 @@ filename = "output.wav"
 openai.api_key = os.getenv('api_key')
 
 
-
-
 def json_serializer(obj):
     if isinstance(obj, bytes):
         return obj.decode('utf-8')
