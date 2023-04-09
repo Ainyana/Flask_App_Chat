@@ -128,7 +128,7 @@ def output():
     wf.close()
 
     # # Define OpenAI API key 
-    # openai.api_key = "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"
+    # openai.api_key = "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"
 
     # Set up the model and prompt
     model_engine = "text-davinci-003"
