@@ -20,6 +20,11 @@ class Thing(object):
 
 app = Flask(__name__)
 
+
+def configure():
+    load_dotenv()
+
+
 chunk = 1024  # Record in chunks of 1024 samples
 sample_format = pyaudio.paInt16  # 16 bits per sample
 channels = 2
@@ -31,9 +36,6 @@ filename = "output.wav"
  # Define OpenAI API key 
 # openai.api_key = cred.api_key
 openai.api_key = os.getenv('api_key')
-
-def configure():
-    load_dotenv()
 
 
 
@@ -114,8 +116,7 @@ frames = []  # Initialize array to store frames
 
 @app.route("/output" ,methods=['POST','GET'])
 def output():
-
-    configure()
+    openai.api_key = os.getenv('api_key')
     p = pyaudio.PyAudio()  # Create an interface to PortAudio
     
     # Save the recorded data as a WAV file
@@ -127,7 +128,7 @@ def output():
     wf.close()
 
     # # Define OpenAI API key 
-    # openai.api_key = "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"
+    # openai.api_key = "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"
 
     # Set up the model and prompt
     model_engine = "text-davinci-003"
@@ -172,6 +173,7 @@ def output():
  
 
 if __name__ == "__main__":
+    configure()
     
     # serve(app, host="0.0.0.0", port=8080)
     # app.run(debug=False,host='0.0.0.0')
